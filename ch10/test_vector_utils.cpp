@@ -24,4 +24,10 @@ vector<int> nums = {};
 string numstr = render_num_vector(nums);
 string expected = "";
 CHECK(numstr == expected);
+
+}
+
+TEST_CASE("Testing num_vector_sum") {
+    vector<int> nums = {1, 3, 7};
+    CHECK(11 == num_vector_sum(nums));
 }
