@@ -30,4 +30,8 @@ CHECK(numstr == expected);
 TEST_CASE("Testing num_vector_sum") {
     vector<int> nums = {1, 3, 7};
     CHECK(11 == num_vector_sum(nums));
+vector<int> nums2 = {1,-4,-3,2};
+CHECK(-4 == num_vector_sum(nums2));
+vector<int> nums3 = {};
+CHECK(0 == num_vector_sum(nums3));
 }
