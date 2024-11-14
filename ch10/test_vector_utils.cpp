@@ -81,5 +81,9 @@ TEST_CASE("Testing mean function") {
     CHECK(4==mean(nums));
     vector<int> nums2 = {-8,2,1,3};
     CHECK(-0.5==mean(nums2));
+}
 
+TEST_CASE("Testing median function"){
+    vector<int> nums = {1,2,3,4,5};
+    CHECK(3==median(nums));
 }

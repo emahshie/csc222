@@ -72,3 +72,8 @@ double mean(const vector<int>& nums){
     double mean = sum/nums.size();
     return mean;
 }
+
+double median(const vector<int>& nums){
+    double median =0;
+    return median;
+}
