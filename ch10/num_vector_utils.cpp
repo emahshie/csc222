@@ -22,3 +22,9 @@ int num_vector_sum(const vector<int>& nums){
 }
 return total;
 }
+
+int num_vector_product(const vector<int>& nums){
+        int product = 0;
+
+return product;
+}

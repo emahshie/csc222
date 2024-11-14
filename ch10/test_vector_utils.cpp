@@ -35,3 +35,8 @@ CHECK(-4 == num_vector_sum(nums2));
 vector<int> nums3 = {};
 CHECK(0 == num_vector_sum(nums3));
 }
+
+TEST_CASE("Testing num_vector_product") {
+    vector<int> nums = {2, 3, 7};
+    CHECK(42 == num_vector_sum(nums));
+}
