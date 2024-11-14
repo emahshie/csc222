@@ -25,6 +25,9 @@ return total;
 
 int num_vector_product(const vector<int>& nums){
         int product = 0;
-
+	product += nums.at(0);
+	for(int i =1;i<nums.size();i++){
+		product *= nums.at(i);
+}
 return product;
 }
