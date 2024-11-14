@@ -63,3 +63,8 @@ vector<int> nums_between(const vector<int>& nums, int bottom, int top){
     }
     return pass;
 }
+
+double mean(const vector<int>& nums){
+    double mean =0;
+    return mean;
+}
