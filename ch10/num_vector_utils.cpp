@@ -65,6 +65,10 @@ vector<int> nums_between(const vector<int>& nums, int bottom, int top){
 }
 
 double mean(const vector<int>& nums){
-    double mean =0;
+    double sum =0;
+    for (int i=0;i<nums.size();i++){
+        sum += nums[i];
+    }
+    double mean = sum/nums.size();
     return mean;
 }

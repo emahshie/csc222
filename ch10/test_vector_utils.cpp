@@ -79,5 +79,7 @@ TEST_CASE("Testing nums_between function") {
 TEST_CASE("Testing mean function") {
     vector<int> nums = {2,4,6};
     CHECK(4==mean(nums));
+    vector<int> nums2 = {-8,2,1,3};
+    CHECK(-0.5==mean(nums2));
 
 }
