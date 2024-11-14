@@ -53,3 +53,13 @@ vector<int> only_odds(const vector<int>& nums){
     }
 	return odd;
 }
+
+vector<int> nums_between(const vector<int>& nums, int bottom, int top){
+    vector<int> pass ={};
+    for (int i=0;i<nums.size();i++){
+        if(nums[i]>=bottom && nums[i]<= top){
+            pass.push_back(nums[i]);
+        }
+    }
+    return pass;
+}

@@ -11,3 +11,5 @@ int num_vector_product(const vector<int>&);
 vector<int> only_evens(const vector<int>&);
 
 vector<int> only_odds(const vector<int>&);
+
+vector<int> nums_between(const vector<int>&, int, int);
