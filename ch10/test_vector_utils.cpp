@@ -56,3 +56,10 @@ vector<int> nums2 = {1,1,1,3,3};
     string expected2 = "";
     CHECK(render_num_vector(evens2) == expected2);
 }
+
+TEST_CASE("Testing only_odds") {
+    vector<int> nums = {1, 2, 3, 4, 6, 7, 8, 11, 12, 14, 27, 22};
+    vector<int> odds = only_odds(nums);
+    string expected = "2 4 6 8 12 14 22";
+    CHECK(render_num_vector(odds) == expected);
+}
