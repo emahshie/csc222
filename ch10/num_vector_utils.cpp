@@ -45,5 +45,11 @@ return even;
 
 vector<int> only_odds(const vector<int>& nums){
 	vector<int> odd={};
+	for(int i=0;i<nums.size();i++){
+        if(nums[i]%2==1){
+        odd.push_back(nums[i]);
+
+     }
+    }
 	return odd;
 }
