@@ -74,6 +74,24 @@ double mean(const vector<int>& nums){
 }
 
 double median(const vector<int>& nums){
-    double median =0;
-    return median;
+    vector<int> nums_copy = nums;
+    int minval = nums[0];
+    int temp=0;
+for(int i = 0; i< nums.size(); i++){ 
+for(int j = 0; j< nums.size()-1; j++){
+        if(nums[j+1]<nums[j]){
+            temp=nums_copy[j+1];
+            nums_copy[j+1]=nums_copy[j];
+            nums_copy[j]=temp;  
+        }
+    }
+}
+    double n = nums.size()/2;
+    if(nums.size()%2==0){
+        double front = nums[n-0.5];
+        double back = nums[n+0.5];
+        return (front+back)/2;
+    }
+
+    return (double) nums[n/2+1.5];
 }
