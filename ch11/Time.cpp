@@ -31,3 +31,14 @@ double Time::convert_to_seconds() const
 {
     return (hour * 60 + minute) * 60 + second;
 }
+
+bool Time::after(const Time &t2) const
+{
+    if (hour > t2.hour) return true;
+    if (hour < t2.hour) return false;
+
+    if (minute > t2.minute) return true;
+    if (minute < t2.minute) return false;
+
+    return (second > t2.second);
+}
