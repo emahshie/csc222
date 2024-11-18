@@ -16,16 +16,15 @@ void Time::print() const
 
 void Time::increment(double secs)
 {
-    second += secs;
-
-    while (second >= 60.0) {
-        second -= 60.0;
-        minute += 1;
-    }
-    while (minute >= 60) {
-        minute -= 60;
-        hour += 1;
-    }
+    int mhour = (int)secs/3600;
+   int mminute = (int)secs/60;
+   
+   hour += mhour;
+   minute += mminute;
+   
+   secs-=(mhour*3600+mminute*60);
+   second+=secs;
+   
 }
 
 double Time::convert_to_seconds() const
