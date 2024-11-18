@@ -26,3 +26,8 @@ void Time::increment(double secs)
         hour += 1;
     }
 }
+
+double Time::convert_to_seconds() const
+{
+    return (hour * 60 + minute) * 60 + second;
+}
