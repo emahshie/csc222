@@ -6,6 +6,13 @@ using namespace std;
 Time::Time(int h, int m, double s)
 {
   hour = h; minute = m; second = s;
+  cout<<"2 ints, 1 double";
+}
+
+Time::Time(int h, int m, int s)
+{
+  hour = h; minute = m; second = (double)s;
+  cout<<"3 ints";
 }
 
 
@@ -55,4 +62,5 @@ Time::Time(double secs)
     minute = int(secs / 60.0);
     secs -= minute * 60;
     second = secs;
+    cout<<"1 double";
 }

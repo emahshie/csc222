@@ -6,6 +6,7 @@ struct Time {
     // constructors
     Time(int, int, double);
     Time(double);
+    Time(int, int, int);
 
     // modifiers
     void increment(double);
