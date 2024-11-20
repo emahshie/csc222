@@ -28,8 +28,8 @@ Time::Time(double secs)
     second = secs;
 }
 Time::Time(int h, int m){
-    hour =0;
-    minute =0;
+    hour =h;
+    minute =m;
     second =0;
 }
 
