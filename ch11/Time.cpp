@@ -52,9 +52,13 @@ void Time::increment(double secs)
    
 }
 
-void Time::fix(Time t){
+void Time::fix(){
     while(second>60){
         minute+=1;
+        second-=60;
+    }
+    while(minute>60){
+        hour+=1;
         second-=60;
     }
 }
@@ -96,6 +100,7 @@ Time Time::add(const Time &t2) const
 
 
 Time Time::operator+(const Time &other) {
-    Time t3(0,0,0);
-    return t3;
+    Time plus(hour+other.hour, minute + other.minute, second+other.second);
+    plus.fix();
+    return plus;
 }

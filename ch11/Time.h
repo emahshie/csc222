@@ -12,7 +12,7 @@ struct Time {
 
     // modifiers
     void increment(double);
-    void fix(Time);
+    void fix();
 
     // functions
     void print() const;
