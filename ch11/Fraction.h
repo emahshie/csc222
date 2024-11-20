@@ -5,4 +5,7 @@ struct Fraction{
     //constructors
     Fraction();
     Fraction(int, int);
+
+    //functions
+    void print () const;
 }
