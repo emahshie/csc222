@@ -52,6 +52,13 @@ void Time::increment(double secs)
    
 }
 
+void Time::fix(Time t){
+    while(second>60){
+        minute+=1;
+        second-=60;
+    }
+}
+
 std::string Time::to_string() const {
     string s = std::to_string(hour)+":";
     if(minute<10){
@@ -87,3 +94,8 @@ Time Time::add(const Time &t2) const
     return Time(convert_to_seconds() + t2.convert_to_seconds());
 }
 
+
+Time Time::operator+(const Time &other) {
+    Time t3(0,0,0);
+    return t3;
+}

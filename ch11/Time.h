@@ -12,6 +12,7 @@ struct Time {
 
     // modifiers
     void increment(double);
+    void fix(Time);
 
     // functions
     void print() const;
@@ -19,4 +20,6 @@ struct Time {
     Time add(const Time&) const;
     double convert_to_seconds() const;
     std::string to_string() const;
+    Time operator+(const Time &);
+
 };
