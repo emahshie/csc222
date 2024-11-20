@@ -21,3 +21,9 @@ TEST_CASE("Test can add Points") {
     CHECK(p3.x == 8.0);
     CHECK(p3.y == 6.0);
 }
+
+TEST_CASE("Test can render Points as strings") {
+    Point p(8, 7);
+    string expected = "(8.000000, 7.000000)";
+    CHECK(p.to_string() == expected);
+}

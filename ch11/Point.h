@@ -11,4 +11,6 @@ struct Point
 
     Point operator+(const Point &);
 
+    string to_string();
+
 };

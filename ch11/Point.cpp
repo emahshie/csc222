@@ -16,3 +16,8 @@ Point::Point(double one, double two){
 Point Point::operator+(const Point &other) {
     return Point(x + other.x, y + other.y);
 }
+
+string Point::to_string() {
+    string s = "(";
+    return s;
+}
