@@ -104,3 +104,8 @@ Time Time::operator+(const Time &other) {
     plus.fix();
     return plus;
 }
+
+std::ostream& operator<<(std::ostream& out, Time t) {
+    out << t.to_string();
+    return out;
+}

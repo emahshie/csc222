@@ -23,3 +23,5 @@ struct Time {
     Time operator+(const Time &);
 
 };
+
+std::ostream& operator<<(std::ostream&, Time);
