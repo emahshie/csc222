@@ -49,7 +49,17 @@ void Time::increment(double secs)
 }
 
 std::string Time::to_string() const {
-    return "";
+    string s = std::to_string(hour)+":";
+    if(minute<10){
+        s+="0";
+    }
+    
+    s+=std::to_string(minute)+":";
+    if(second<10){
+        s+="0";
+    }
+     s+=std::to_string((int)second);
+     return s;
 }
 
 double Time::convert_to_seconds() const
