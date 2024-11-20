@@ -8,4 +8,7 @@ struct Point
 
     Point();
     Point(double,double);
+
+    Point operator+(const Point &);
+
 };

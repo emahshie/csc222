@@ -12,3 +12,7 @@ Point::Point(double one, double two){
     x=one;
     y=two;
 }
+
+Point Point::operator+(const Point &other) {
+    return Point();
+}
