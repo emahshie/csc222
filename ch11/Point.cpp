@@ -18,6 +18,6 @@ Point Point::operator+(const Point &other) {
 }
 
 string Point::to_string() {
-    string s = "(";
+    string s = "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
     return s;
 }
