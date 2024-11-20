@@ -27,7 +27,11 @@ Time::Time(double secs)
     secs -= minute * 60;
     second = secs;
 }
-
+Time::Time(int h, int m){
+    hour =0;
+    minute =0;
+    second =0;
+}
 
 void Time::print() const
 {

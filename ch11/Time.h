@@ -8,6 +8,7 @@ struct Time {
     Time(double);
     Time(int, int, int);
     Time();
+    Time(int,int);
 
     // modifiers
     void increment(double);
