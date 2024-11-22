@@ -109,3 +109,14 @@ std::ostream& operator<<(std::ostream& out, Time t) {
     out << t.to_string();
     return out;
 }
+
+std::string Time::am_pm() const {
+    if(hour<=12){
+        return to_string() +" AM";
+    }
+    else{
+        int n = hour-12;
+        Time t(n,minute,second);
+        return t.to_string()+" PM";
+    }
+}

@@ -1,6 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest.h>
 #include "Time.h"
+#include <string>
 using namespace std;
 
 TEST_CASE("Test can create and render Times") {
@@ -26,4 +27,10 @@ TEST_CASE("Test can add two Times with + operator") {
     Time t2(17, 2, 42);
     Time t3 = t1 + t2;
     CHECK(t3.to_string() == "42:42:42");
+}
+
+TEST_CASE("Test AM/PM"){
+    Time t1(13,44,12);
+    string expected = "1:44:12 PM";
+    CHECK(t1.am_pm()==expected);
 }

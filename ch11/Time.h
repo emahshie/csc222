@@ -21,6 +21,7 @@ struct Time {
     double convert_to_seconds() const;
     std::string to_string() const;
     Time operator+(const Time &);
+    std::string am_pm() const;
 
 };
 
