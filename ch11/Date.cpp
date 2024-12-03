@@ -54,7 +54,24 @@ std::string Date::to_words() const{
             s+= "December";
             break;
     }
-    s+= " "+std::to_string(day) + ", "+std::to_string(year);
+    s+= " "+std::to_string(day);
+    if(day>10 && day<20){
+        s+="th";
+    }
+    else if(day%10==1){
+        s+="st";
+    }
+    else if(day%10==2){
+        s+="nd";
+    }
+    else if(day%10==3){
+        s+="rd";
+    }
+    else{
+        s+="th";
+    }
+
+    s+= ", "+std::to_string(year);
     return s;
 }
 

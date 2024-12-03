@@ -10,7 +10,11 @@ TEST_CASE("Test can create and render Date") {
 
 TEST_CASE("Test can write date in word form"){
     Date d(1,3,1992);
-    CHECK(d.to_words() == "The date is January 3, 1992");
+    CHECK(d.to_words() == "The date is January 3rd, 1992");
+    Date a(1,2,1000);
+    CHECK(a.to_words()=="The date is January 2nd, 1000");
+    Date b(1,25,1000);
+    CHECK(b.to_words()=="The date is January 25th, 1000");
 }
 
 TEST_CASE("Can print season"){
