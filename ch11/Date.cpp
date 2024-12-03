@@ -3,6 +3,25 @@
 #include "Date.h"
 using namespace std;
 
+
+Date::Date(){
+    day = 1;
+    month = 1;
+    year = 2000;
+}
+
+Date::Date(int m){
+    day = 1;
+    month = m;
+    year = 2000;
+}
+
+Date::Date(int m, int d){
+    day = d;
+    month = m;
+    year = 2000;
+}
+
 Date::Date(int m, int d, int y){
     day = d;
     month = m;

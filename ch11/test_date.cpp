@@ -6,6 +6,12 @@ using namespace std;
 TEST_CASE("Test can create and render Date") {
     Date d(2,2,2002);
     CHECK(d.to_string() == "2/2/2002");
+    Date a;
+    CHECK(a.to_string() == "1/1/2000");
+    Date b(3);
+    CHECK(b.to_string() == "3/1/2000");
+    Date c(3,4);
+    CHECK(c.to_string() == "3/4/2000");
 }
 
 TEST_CASE("Test can write date in word form"){
