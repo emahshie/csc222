@@ -12,4 +12,5 @@ struct Date{
     std::string to_string() const;
     std::string to_words() const;
     std::string season() const;
+    bool after(const Date&) const;
 };

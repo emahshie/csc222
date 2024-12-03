@@ -108,3 +108,14 @@ std::string Date::season() const{
         return "Fall";
     }
 }
+
+bool Date::after(const Date &t2) const
+{
+    if (year > t2.year) return true;
+    if (year < t2.year) return false;
+
+    if (month > t2.month) return true;
+    if (month < t2.month) return false;
+
+    return (day > t2.day);
+}

@@ -33,3 +33,12 @@ TEST_CASE("Can print season"){
     Date f(10,10,10);
     CHECK(f.season()=="Fall");
 }
+
+TEST_CASE("Can compare two dates"){
+    Date a(2,20,2024);
+    Date b(2,21,2024);
+    Date c(2,20,2024);
+    CHECK(b.after(a));
+    CHECK(!a.after(c));
+    
+}
