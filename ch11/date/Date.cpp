@@ -121,6 +121,7 @@ bool Date::after(const Date &d2) const
 }
 
 int Date::days_since_2000() const{
+    //must give a date after 2000
     if(year<2000){
         return 0;
     }
@@ -170,9 +171,13 @@ int Date::days_since_2000() const{
 
 }
 
-/*int Date::days_until(const Date &d2) const {
+int Date::days_between(const Date &d2) const {
+    //must give two dates after 2000
     if(after(d2)){
-
+        return days_since_2000()- d2.days_since_2000();
+    }
+    else{
+        return d2.days_since_2000()-days_since_2000();
     }
 
-}*/
+}

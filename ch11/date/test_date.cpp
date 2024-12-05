@@ -49,3 +49,14 @@ TEST_CASE("Can convert to days since year 2000"){
     Date s(1,1,1900);
     CHECK(!s.days_since_2000());
 }
+
+TEST_CASE("Can find the difference between two dates after 2000"){
+    Date d(2,2,2001);
+    Date s(2,3,2001);
+    CHECK(d.days_between(s)==1);
+
+    Date e(2,2,2001);
+    Date f(11,9,2000);
+    CHECK(e.days_between(f)==85);
+
+}
