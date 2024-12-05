@@ -42,3 +42,10 @@ TEST_CASE("Can compare two dates"){
     CHECK(!a.after(c));
     
 }
+
+TEST_CASE("Can convert to days since year 2000"){
+    Date d(6,15,2022);
+    CHECK(d.days_since_2000() == 8201);
+    Date s(1,1,1900);
+    CHECK(!s.days_since_2000());
+}

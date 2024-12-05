@@ -109,13 +109,70 @@ std::string Date::season() const{
     }
 }
 
-bool Date::after(const Date &t2) const
+bool Date::after(const Date &d2) const
 {
-    if (year > t2.year) return true;
-    if (year < t2.year) return false;
+    if (year > d2.year) return true;
+    if (year < d2.year) return false;
 
-    if (month > t2.month) return true;
-    if (month < t2.month) return false;
+    if (month > d2.month) return true;
+    if (month < d2.month) return false;
 
-    return (day > t2.day);
+    return (day > d2.day);
 }
+
+int Date::days_since_2000() const{
+    if(year<2000){
+        return 0;
+    }
+    int total = day + ((year-2000)*365) + ((year-2000)/4);
+    for(int i = 1;i<month;i++){
+        switch(i){
+        case 1:
+            total+= 31;
+            break;
+        case 2:
+            total+=28;
+            break;
+        case 3:
+            total+= 31;
+            break;
+        case 4:
+            total+=30;
+            break;
+        case 5:
+            total+= 31;
+            break;
+        case 6:
+            total+=30;
+            break;
+        case 7:
+            total+= 31;
+            break;
+        case 8:
+            total+= 31;
+            break;
+        case 9:
+            total+=30;
+            break;
+        case 10:
+            total+= 31;
+            break;
+        case 11:
+            total+=30;
+            break;
+        case 12:
+            total+= 31;
+            break;
+    }
+    }
+    return total;
+
+
+}
+
+/*int Date::days_until(const Date &d2) const {
+    if(after(d2)){
+
+    }
+
+}*/
