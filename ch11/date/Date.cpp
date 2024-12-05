@@ -181,3 +181,18 @@ int Date::days_between(const Date &d2) const {
     }
 
 }
+
+std::string Date::special() const{
+    string s = to_words() + ", AKA ";
+    if(day == 25 &month ==12){
+        s+="Christmas";
+    }
+    else if(day == 31 &month == 10){
+        s+="Halloween";
+    }
+    else if(day == 1 &month == 1){
+        s+="New Years";
+    }
+    return s;
+
+}

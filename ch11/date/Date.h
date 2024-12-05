@@ -15,4 +15,5 @@ struct Date{
     bool after(const Date&) const;
     int days_since_2000() const;
     int days_between(const Date&) const;
+    std::string special () const;
 };

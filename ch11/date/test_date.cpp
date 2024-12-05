@@ -60,3 +60,13 @@ TEST_CASE("Can find the difference between two dates after 2000"){
     CHECK(e.days_between(f)==85);
 
 }
+
+
+TEST_CASE("Can identify special dates"){
+    Date a(12,25,2002);
+    CHECK(a.special()=="The date is December 25th, 2002, AKA Christmas");
+    Date b(10,31,2008);
+    CHECK(b.special()=="The date is October 31st, 2008, AKA Halloween");
+    Date c(1,1,2024);
+    CHECK(c.special()=="The date is January 1st, 2024, AKA New Years");
+}
