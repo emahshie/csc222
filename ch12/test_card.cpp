@@ -34,3 +34,26 @@ TEST_CASE("Can compare cards") {
     CHECK(c4>c3);
 
 }
+
+TEST_CASE("less than"){
+    Card c1(1,1);
+    Card c2(2,2);
+    CHECK(c1<c2);
+    CHECK(!(c2<c1));
+}
+
+TEST_CASE("greater than or equal to"){
+    Card c1(1,1);
+    Card c2(1,1);
+    Card c3(2,2);
+    CHECK(c1>=c2);
+    CHECK(c3>=c1);
+}
+
+TEST_CASE("greater than or equal to"){
+    Card c1(1,1);
+    Card c2(1,1);
+    Card c3(2,2);
+    CHECK(c1<=c2);
+    CHECK(c1<=c3);
+}
