@@ -57,3 +57,9 @@ TEST_CASE("greater than or equal to"){
     CHECK(c1<=c2);
     CHECK(c1<=c3);
 }
+
+TEST_CASE("build deck"){
+    vector<Card> deck;
+    deck = build_deck();
+    CHECK(deck[32].to_string() == "7 of Diamonds");
+}

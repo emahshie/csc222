@@ -76,3 +76,15 @@ bool Card::operator<=(const Card& c2) const
 
     return true;
 }
+
+std::vector<Card> build_deck() {
+    vector<Card> deck;
+    int i = 0;
+    for (int suit = 0; suit <= 3; suit++) {
+        for (int rank = 1; rank <= 13; rank++) {
+            deck.emplace_back(suit, rank);
+            i++;
+        }
+    }
+    return deck;
+}

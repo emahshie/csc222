@@ -11,4 +11,7 @@ struct Card
     bool operator<(const Card&) const;
     bool operator>=(const Card&) const;
     bool operator<=(const Card&) const;
+    
+
 };
+std::vector<Card> build_deck();
