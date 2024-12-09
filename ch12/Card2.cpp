@@ -43,13 +43,36 @@ bool Card::operator>(const Card& c2) const
 
 bool Card::operator<(const Card& c2) const
 {
-    return 0;
+    if (suit < c2.suit) return true;
+    if (suit > c2.suit) return false;
+
+    if (rank < c2.rank) return true;
+    if (rank > c2.rank) return false;
+
+    return false;
 }
 bool Card::operator>=(const Card& c2) const
 {
-    return 0;
+    // first check the suits
+    if (suit > c2.suit) return true;
+    if (suit < c2.suit) return false;
+
+    // if suits are equal, check ranks
+    if (rank > c2.rank) return true;
+    if (rank < c2.rank) return false;
+    // this last statement can be omitted without changing the
+    // behavior of the function, but making it arguably less readable
+
+    // if ranks are equal too
+    return true;
 }
 bool Card::operator<=(const Card& c2) const
 {
-    return 0;
+    if (suit < c2.suit) return true;
+    if (suit > c2.suit) return false;
+
+    if (rank < c2.rank) return true;
+    if (rank > c2.rank) return false;
+
+    return true;
 }
