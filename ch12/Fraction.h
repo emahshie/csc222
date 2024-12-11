@@ -16,5 +16,10 @@ struct Fraction{
     bool operator<(const Fraction&) const;
     bool operator>=(const Fraction&) const;
     bool operator<=(const Fraction&) const;
+
+    Fraction operator*(Fraction) const;
+    Fraction operator/(Fraction) const;
+    Fraction operator-(Fraction) const;
+    Fraction operator+(Fraction) const;
 };
 int gcd(int, int);

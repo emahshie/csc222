@@ -88,3 +88,28 @@ TEST_CASE("Test integer Fractions render properly") {
     Fraction f2(18, 3);
     CHECK(f2.to_string() == "6");
 }
+
+TEST_CASE("multiply") {
+    Fraction f1(1,2);
+    Fraction f2(3,2);
+    Fraction f3 = f1*f2;
+    CHECK(f3.to_string() == "3/4");
+}
+TEST_CASE("divide") {
+    Fraction f1(1);
+    Fraction f2(1,2);
+    Fraction f3 = f1/f2;
+    CHECK(f3.to_string() == "2");
+}
+TEST_CASE("add") {
+    Fraction f1(1,2);
+    Fraction f2(3,2);
+    Fraction f3 = f1+f2;
+    CHECK(f3.to_string() == "2");
+}
+TEST_CASE("subtract") {
+    Fraction f1(1);
+    Fraction f2(1,2);
+    Fraction f3 = f1-f2;
+    CHECK(f3.to_string() == "1/2");
+}

@@ -128,3 +128,38 @@ bool Fraction::operator<=(const Fraction& c2) const
     return false;
 }
 
+Fraction Fraction::operator*(Fraction f2) const{
+    int y = denominator * f2.denominator;
+    int x = numerator * f2.numerator;
+    
+    return Fraction(x,y);
+}
+Fraction Fraction::operator/(Fraction f2) const{
+    int y = denominator * f2.numerator;
+    int x = numerator * f2.denominator;
+    
+    return Fraction(x,y);
+}
+Fraction Fraction::operator-(Fraction f2) const{
+    int n1 = numerator;
+    int d1 = denominator;
+    int n2 = f2.numerator;
+    int d2 = f2.denominator;
+    n1 *= f2.denominator;
+    d1 *= f2.denominator;
+    n2 *= denominator;
+    d2 *= denominator;
+    return Fraction((n1-n2),(d1));
+}
+Fraction Fraction::operator+(Fraction f2) const{
+    int n1 = numerator;
+    int d1 = denominator;
+    int n2 = f2.numerator;
+    int d2 = f2.denominator;
+    n1 *= f2.denominator;
+    d1 *= f2.denominator;
+    n2 *= denominator;
+    d2 *= denominator;
+    return Fraction((n1+n2),(d1));
+    return 1;
+}
