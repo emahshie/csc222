@@ -12,5 +12,9 @@ struct Fraction{
 
     bool operator==(const Fraction&) const;
     bool operator!=(const Fraction&) const;
+    bool operator>(const Fraction&) const;
+    bool operator<(const Fraction&) const;
+    bool operator>=(const Fraction&) const;
+    bool operator<=(const Fraction&) const;
 };
 int gcd(int, int);

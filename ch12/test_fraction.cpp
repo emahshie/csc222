@@ -62,12 +62,12 @@ TEST_CASE("Test comparison operators for Fractions") {
     Fraction f2(3, 4);
     Fraction f3(2, 5);
     Fraction f4(6, 8);
-    //CHECK((f2 > f1) == true);
+    CHECK((f2 > f1) == true);
     CHECK((f2 == f4) == true);
-    //CHECK((f1 < f3) == true);
+    CHECK((f1 < f3) == true);
     CHECK((f3 != f2) == true);
-    //CHECK((f4 >= f1) == true);
-    //CHECK((f4 <= f2) == true);
+    CHECK((f4 >= f1) == true);
+    CHECK((f4 <= f2) == true);
 }
 
 TEST_CASE("Test gcd function") {
