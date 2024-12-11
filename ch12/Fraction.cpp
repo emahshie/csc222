@@ -14,7 +14,7 @@ Fraction::Fraction(int n, int d)
 }
 
 Fraction::Fraction(std::string s){
-    int j;
+    int j=0;
     for(int i=0;i<s.length();i++){
         char n = s[i];
         if(n=='/'){
@@ -22,8 +22,14 @@ Fraction::Fraction(std::string s){
             break;
         }
     }
+    if (j==0){
+        numerator = stoi(s);
+        denominator = 1;
+    }
+    else{
     numerator = stoi(s.substr(0,j));
     denominator = stoi(s.substr(j+1));
+    }
 }
 
 Fraction::Fraction(int n){

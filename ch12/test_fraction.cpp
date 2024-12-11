@@ -47,3 +47,12 @@ TEST_CASE("Test can construct Fraction from integer") {
     CHECK(f2.numerator == 42);
     CHECK(f2.denominator == 1);
 }
+
+TEST_CASE("Test string constructor with integers") {
+    Fraction f1("15");
+    CHECK(f1.numerator == 15);
+    CHECK(f1.denominator == 1);
+    Fraction f2("42");
+    CHECK(f2.numerator == 42);
+    CHECK(f2.denominator == 1);
+}
