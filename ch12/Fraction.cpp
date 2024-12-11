@@ -9,8 +9,9 @@ Fraction::Fraction()
 }
 Fraction::Fraction(int n, int d)
 {
-    numerator = n;
-    denominator = d;
+    int t = gcd(n,d);
+    numerator = n/t;
+    denominator = d/t;
 }
 
 Fraction::Fraction(std::string s){
@@ -53,4 +54,28 @@ std::string Fraction::to_string() const{
     }
     return std::to_string(numerator)+"/"+std::to_string(denominator);
 }
+int gcd(int numerator,int denominator){
+    int small = min(numerator, denominator);
+    while(small > 1){
+        if (numerator % small == 0 && denominator % small == 0)
+            {
+            return small;
+            }
+        small--;
+    }
+    return 1;
+}
+
+bool Fraction::operator==(const Fraction& c2) const
+{
+    if (numerator == c2.numerator && denominator == c2.denominator) return true;
+    return false;
+}
+
+bool Fraction::operator!=(const Fraction& c2) const
+{
+    if (numerator == c2.numerator && denominator == c2.denominator) return false;
+    return true;
+}
+
 

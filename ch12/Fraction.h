@@ -9,4 +9,8 @@ struct Fraction{
     //functions
     void print () const;
     std::string to_string() const;
+
+    bool operator==(const Fraction&) const;
+    bool operator!=(const Fraction&) const;
 };
+int gcd(int, int);

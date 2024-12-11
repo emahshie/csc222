@@ -56,3 +56,35 @@ TEST_CASE("Test string constructor with integers") {
     CHECK(f2.numerator == 42);
     CHECK(f2.denominator == 1);
 }
+
+TEST_CASE("Test comparison operators for Fractions") {
+    Fraction f1(1, 4);
+    Fraction f2(3, 4);
+    Fraction f3(2, 5);
+    Fraction f4(6, 8);
+    //CHECK((f2 > f1) == true);
+    CHECK((f2 == f4) == true);
+    //CHECK((f1 < f3) == true);
+    CHECK((f3 != f2) == true);
+    //CHECK((f4 >= f1) == true);
+    //CHECK((f4 <= f2) == true);
+}
+
+TEST_CASE("Test gcd function") {
+    CHECK(gcd(4, 14) == 2);
+    CHECK(gcd(16, 12) == 4);
+    CHECK(gcd(18, 27) == 9);
+}
+
+TEST_CASE("Test Fractions are stored in lowest terms") {
+    Fraction f1(6, 8);
+    CHECK(f1.to_string() == "3/4");
+    Fraction f2(18, 3);
+    CHECK(f2.to_string() == "6");
+}
+TEST_CASE("Test integer Fractions render properly") {
+    Fraction f1(5, 1);
+    CHECK(f1.to_string() == "5");
+    Fraction f2(18, 3);
+    CHECK(f2.to_string() == "6");
+}
