@@ -12,6 +12,12 @@ Fraction::Fraction(int n, int d)
     numerator = n;
     denominator = d;
 }
+
+Fraction::Fraction(std::string s){
+    numerator = 0;
+    denominator = 0;
+}
+
 void Fraction::print() const {
     cout<<numerator<<"/"<<denominator;
 }
@@ -28,3 +34,4 @@ std::string Fraction::to_string() const{
     }
     return std::to_string(numerator)+"/"+std::to_string(denominator);
 }
+
