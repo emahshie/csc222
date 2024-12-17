@@ -18,4 +18,13 @@ struct Card
     
 
 };
+struct Deck {
+    std::vector<Card> cards;
+
+    Deck(int n);
+    Deck();
+
+    void print() const;
+};
+
 std::vector<Card> build_deck();
