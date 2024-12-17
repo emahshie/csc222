@@ -4,10 +4,10 @@
 using namespace std;
 
 Card::Card() {
-    suit = 0; rank = 0;
+    suit = NONE; rank = JOKER;
 }
 
-Card::Card(int s, int r) {
+Card::Card(Suit s, Rank r) {
     suit = s; rank = r;
 }
 
@@ -77,14 +77,17 @@ bool Card::operator<=(const Card& c2) const
     return true;
 }
 
-std::vector<Card> build_deck() {
-    vector<Card> deck;
+vector<Card> build_deck()
+{
+    vector<Card> deck(52);
     int i = 0;
-    for (int suit = 0; suit <= 3; suit++) {
-        for (int rank = 1; rank <= 13; rank++) {
-            deck.emplace_back(suit, rank);
+    for (Suit suit = CLUBS; suit <= SPADES; suit = Suit(suit+1)) {
+        for (Rank rank = ACE; rank <= KING; rank = Rank(rank+1)) {
+            deck[i].suit = suit;
+            deck[i].rank = rank;
             i++;
         }
     }
     return deck;
 }
+

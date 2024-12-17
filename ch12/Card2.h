@@ -1,9 +1,13 @@
+enum Suit {NONE, CLUBS, DIAMONDS, HEARTS, SPADES};
+enum Rank {JOKER, ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
+           NINE, TEN, JACK, QUEEN, KING};
 struct Card
 {
-    int suit, rank;
+    Rank rank;
+    Suit suit;
 
     Card();
-    Card(int s, int r);
+    Card(Suit s, Rank r);
 
     std::string to_string() const;
     bool operator==(const Card&) const;
