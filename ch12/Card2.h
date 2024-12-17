@@ -1,6 +1,9 @@
 enum Suit {NONE, CLUBS, DIAMONDS, HEARTS, SPADES};
-enum Rank {JOKER, ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
-           NINE, TEN, JACK, QUEEN, KING};
+enum Rank {JOKER, TWO=2, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
+           NINE, TEN, JACK, QUEEN, KING, ACE};
+
+struct Deck;
+
 struct Card
 {
     Rank rank;
@@ -15,7 +18,8 @@ struct Card
     bool operator<(const Card&) const;
     bool operator>=(const Card&) const;
     bool operator<=(const Card&) const;
-    
+
+    int find(const Deck&) const;
 
 };
 struct Deck {
