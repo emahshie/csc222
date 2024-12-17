@@ -29,6 +29,7 @@ struct Deck {
     Deck();
 
     void print() const;
+    void swap_cards(int first, int second);
 };
 
 std::vector<Card> build_deck();

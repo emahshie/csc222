@@ -51,3 +51,10 @@ TEST_CASE("Test find Card in Deck") {
     int pos2 = c2.find(d);
     CHECK(pos2 == -1);
 }
+
+TEST_CASE("Test swap_cards in Deck") {
+    Deck d;
+    d.swap_cards(0, 51);
+    CHECK(d.cards[0].to_string() == "Ace of Spades");
+    CHECK(d.cards[51].to_string() == "2 of Clubs");
+}

@@ -127,3 +127,8 @@ int Card::find(const Deck& deck) const
     return -1;
 }
 
+void Deck::swap_cards(int first, int second){
+    Card temp = cards[first];
+    cards[first] = cards[second];
+    cards[second] = temp;
+}
