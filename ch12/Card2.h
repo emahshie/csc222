@@ -37,3 +37,4 @@ struct Deck {
 
 std::vector<Card> build_deck();
 int random_between(int , int);
+void swap_cards(Card &, Card &);

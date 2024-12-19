@@ -154,3 +154,9 @@ void Deck::shuffle()
 int random_between(int s, int f){
     return (rand()%(f-s+1))+s;
 }
+
+void swap_cards(Card &c1, Card &c2){
+    Card temp = c1;
+    c1 = c2;
+    c2 = temp;
+}
