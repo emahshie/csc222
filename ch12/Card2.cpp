@@ -83,7 +83,7 @@ std::vector<Card> build_deck()
     vector<Card> deck(52);
     int i = 0;
     for (Suit suit = CLUBS; suit <= SPADES; suit = Suit(suit+1)) {
-        for (Rank rank = ACE; rank <= KING; rank = Rank(rank+1)) {
+        for (Rank rank = TWO; rank <= ACE; rank = Rank(rank+1)) {
             deck[i].suit = suit;
             deck[i].rank = rank;
             i++;
@@ -131,4 +131,26 @@ void Deck::swap_cards(int first, int second){
     Card temp = cards[first];
     cards[first] = cards[second];
     cards[second] = temp;
+}
+
+Card Deck::remove_card(){
+    Card c = cards[cards.size()-1];
+    cards.pop_back();
+    return c;
+}
+
+void Deck::add_card(Card c){
+    cards.push_back(c);
+}
+
+void Deck::shuffle()
+{
+    for (int i = 0; i < cards.size(); i++) {
+        int rand_card = random_between(0, cards.size() - 1);
+        swap_cards(i, rand_card);
+    }
+}
+
+int random_between(int s, int f){
+    return (rand()%(f-s+1))+s;
 }

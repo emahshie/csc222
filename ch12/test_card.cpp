@@ -63,3 +63,4 @@ TEST_CASE("build deck"){
     deck = build_deck();
     CHECK(deck[32].to_string() == "7 of Hearts");
 }
+

@@ -30,6 +30,10 @@ struct Deck {
 
     void print() const;
     void swap_cards(int first, int second);
+    Card remove_card();
+    void add_card(Card c);
+    void shuffle();
 };
 
 std::vector<Card> build_deck();
+int random_between(int , int);
