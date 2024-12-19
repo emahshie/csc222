@@ -33,6 +33,7 @@ struct Deck {
     Card remove_card();
     void add_card(Card c);
     void shuffle();
+    Deck subdeck(int, int);
 };
 
 std::vector<Card> build_deck();

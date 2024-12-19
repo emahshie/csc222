@@ -160,3 +160,11 @@ void swap_cards(Card &c1, Card &c2){
     c1 = c2;
     c2 = temp;
 }
+
+Deck Deck::subdeck(int low, int high){
+    Deck subdeck(high-low+1);
+    for (int i =0;i<high-low;i++){
+        subdeck.cards[i]=cards[i+low];
+    }
+    return subdeck;
+}
