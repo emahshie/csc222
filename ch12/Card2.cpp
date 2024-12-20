@@ -175,13 +175,14 @@ void Deck::add_cards(Deck d){
     }
 }
 
-// Merge function to merge two sorted arrays
 void Deck::merge(int left, int mid, int right) {
+    //temps to hold two halves
     std::vector<Card> leftCards(cards.begin()+left, cards.begin()+mid+1);
     std::vector<Card> rightCards(cards.begin()+mid+1, cards.begin()+right+1);
 
     int i = 0, j = 0, k = left;
     
+    //merge back into originial deck
     while (i < leftCards.size() && j < rightCards.size()) {
         if (leftCards[i] <= rightCards[j]) {
             cards[k++] = leftCards[i++];
@@ -189,6 +190,8 @@ void Deck::merge(int left, int mid, int right) {
             cards[k++] = rightCards[j++];
         }
     }
+
+    //copy remaining elements
     while (i < leftCards.size()) {
         cards[k++] = leftCards[i++];
     }
@@ -202,15 +205,19 @@ Deck Deck::merge_sort(){
     temp.merge_sort(0, cards.size()-1);
     return temp;
 }
-// Recursive Merge Sort function to sort the array
+
 void Deck::merge_sort(int left, int right) {
+    //base case
     if (left >= right) {
         return;
     }
+
+    //recursively sort both halves
     int mid = left + (right - left) / 2;
     merge_sort(left, mid);
     merge_sort(mid + 1, right);
     
+    //merge sorted halves
     merge(left, mid, right);
 
 }
