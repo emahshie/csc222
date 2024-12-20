@@ -34,6 +34,10 @@ struct Deck {
     void add_card(Card c);
     void shuffle();
     Deck subdeck(int, int);
+    void add_cards(Deck);
+    void merge_sort(int, int);
+    Deck merge_sort();
+    void merge(int, int, int);
 };
 
 std::vector<Card> build_deck();

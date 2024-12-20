@@ -168,3 +168,49 @@ Deck Deck::subdeck(int low, int high){
     }
     return subdeck;
 }
+
+void Deck::add_cards(Deck d){
+    for(int i=0;i<d.cards.size();i++){
+        add_card(d.cards[i]);
+    }
+}
+
+// Merge function to merge two sorted arrays
+void Deck::merge(int left, int mid, int right) {
+    std::vector<Card> leftCards(cards.begin()+left, cards.begin()+mid+1);
+    std::vector<Card> rightCards(cards.begin()+mid+1, cards.begin()+right+1);
+
+    int i = 0, j = 0, k = left;
+    
+    while (i < leftCards.size() && j < rightCards.size()) {
+        if (leftCards[i] <= rightCards[j]) {
+            cards[k++] = leftCards[i++];
+        } else {
+            cards[k++] = rightCards[j++];
+        }
+    }
+    while (i < leftCards.size()) {
+        cards[k++] = leftCards[i++];
+    }
+    while (j < rightCards.size()) {
+        cards[k++] = rightCards[j++];
+    }
+}
+
+Deck Deck::merge_sort(){
+    Deck temp = *this;
+    temp.merge_sort(0, cards.size()-1);
+    return temp;
+}
+// Recursive Merge Sort function to sort the array
+void Deck::merge_sort(int left, int right) {
+    if (left >= right) {
+        return;
+    }
+    int mid = left + (right - left) / 2;
+    merge_sort(left, mid);
+    merge_sort(mid + 1, right);
+    
+    merge(left, mid, right);
+
+}
