@@ -1,12 +1,12 @@
-#some_file: other_file
-#	echo "This will always run, and runs second"
-#	touch some_file
-
-#other_file:
-#	echo "This will always run, and runs first"
-
-some_file: 
+files := file1 file2
+some_file: $(files)
+	echo "Look at this variable: " $(files)
 	touch some_file
 
+file1:
+	touch file1
+file2:
+	touch file2
+
 clean:
-	rm -f some_file
+	rm -f file1 file2 some_file
