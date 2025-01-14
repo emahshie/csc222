@@ -30,3 +30,7 @@ bool BigInt::operator == (const BigInt &b) const{
     if(digits == b.digits && negative==b.negative) return true;
     return false;
 }
+
+bool BigInt::operator > (const BigInt &b) const{
+    return false;
+}
