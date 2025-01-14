@@ -151,5 +151,41 @@ bool BigInt::operator >= (const BigInt& b) const{
 }
 
 bool BigInt::operator <= (const BigInt &b) const {
-    return false;
+    if(digits == b.digits && negative==b.negative) return true;
+    if(!negative && b.negative){
+        return  false;
+    }else if(negative && !b.negative){
+        return true;
+    }
+    if(!negative){
+    if(digits.length() > b.digits.length()){
+        return false;
+        }else if(digits.length() < b.digits.length()){
+            return true;
+        }
+    }else if(negative){
+        if(digits.length() < b.digits.length()){
+            return false;
+        }else if(digits.length() > b.digits.length()){
+            return true;
+        }
+    }
+    if(!negative){
+        for(int i = 0; i < digits.length(); i++){
+            if(digits[i] > b.digits[i]){
+                return false;
+            }else if(digits[i] < b.digits[i]){
+                return true;
+            }
+        }
+    }
+    if(negative){
+        for(int i = 0; i < digits.length(); i++){
+            if(digits[i] < b.digits[i]){
+                return false;
+            }else if(digits[i] > b.digits[i]){
+                return true;
+            }
+        }
+    }
 }
