@@ -31,39 +31,39 @@ bool BigInt::operator == (const BigInt &b) const{
     return false;
 }
 
-bool BigInt::operator>(const BigInt& num1) const{
-    if(!negative && num1.negative){
+bool BigInt::operator>(const BigInt& b) const{
+    if(!negative && b.negative){
         return  true;
-    }else if(negative && !num1.negative){
+    }else if(negative && !b.negative){
         return false;
     }
     if(!negative){
-    if(digits.length() > num1.digits.length()){
+    if(digits.length() > b.digits.length()){
         return true;
-        }else if(digits.length() < num1.digits.length()){
+        }else if(digits.length() < b.digits.length()){
             return false;
         }
     }else if(negative){
-        if(digits.length() < num1.digits.length()){
+        if(digits.length() < b.digits.length()){
             return true;
-        }else if(digits.length() > num1.digits.length()){
+        }else if(digits.length() > b.digits.length()){
             return false;
         }
     }
     if(!negative){
         for(int i = 0; i < digits.length(); i++){
-            if(digits[i] > num1.digits[i]){
+            if(digits[i] > b.digits[i]){
                 return true;
-            }else if(digits[i] < num1.digits[i]){
+            }else if(digits[i] < b.digits[i]){
                 return false;
             }
         }
     }
     if(negative){
         for(int i = 0; i < digits.length(); i++){
-            if(digits[i] < num1.digits[i]){
+            if(digits[i] < b.digits[i]){
                 return true;
-            }else if(digits[i] > num1.digits[i]){
+            }else if(digits[i] > b.digits[i]){
                 return false;
             }
         }
