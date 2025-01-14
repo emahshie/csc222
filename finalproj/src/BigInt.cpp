@@ -189,3 +189,7 @@ bool BigInt::operator <= (const BigInt &b) const {
         }
     }
 }
+
+bool BigInt::operator != (const BigInt &b) const {
+    return false;
+}
