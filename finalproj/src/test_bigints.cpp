@@ -89,8 +89,8 @@ TEST_CASE("Test can compare BigInts for inequality") {
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
-    CHECK((i2 == i5) == false);
-    CHECK((i1 == i2) == true);
-    CHECK((i1 == i3) == true);
-    CHECK((i2 == i6) == true);
+    CHECK((i2 != i5) == false);
+    CHECK((i1 != i2) == true);
+    CHECK((i1 != i3) == true);
+    CHECK((i2 != i6) == true);
 }

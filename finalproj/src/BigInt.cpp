@@ -191,5 +191,6 @@ bool BigInt::operator <= (const BigInt &b) const {
 }
 
 bool BigInt::operator != (const BigInt &b) const {
-    return false;
+    if(digits == b.digits && negative==b.negative) return false;
+    return true;
 }
