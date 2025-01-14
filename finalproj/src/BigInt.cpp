@@ -149,3 +149,7 @@ bool BigInt::operator >= (const BigInt& b) const{
     }
     return false;
 }
+
+bool BigInt::operator <= (const BigInt &b) const {
+    return false;
+}
