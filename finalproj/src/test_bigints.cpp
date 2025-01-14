@@ -55,3 +55,16 @@ TEST_CASE("Test can compare BigInts for less than") {
     CHECK((i4 < i1) == true);
     CHECK((i6 < i4) == false);
 }
+
+TEST_CASE("Test can compare BigInts for greater than or equal to") {
+    BigInt i1("12345");
+    BigInt i2("54321");
+    BigInt i3("123456");
+    BigInt i4("-654321");
+    BigInt i5("54321");
+    BigInt i6("-54321");
+    CHECK((i2 >= i5) == true);
+    CHECK((i2 >= i1) == true);
+    CHECK((i4 >= i1) == false);
+    CHECK((i6 >= i4) == true);
+}

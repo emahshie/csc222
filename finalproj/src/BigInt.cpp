@@ -108,3 +108,44 @@ bool BigInt::operator < (const BigInt &b) const{
         }
     }
 }
+
+bool BigInt::operator >= (const BigInt& b) const{
+    if(digits == b.digits && negative==b.negative) return true;
+    if(!negative && b.negative){
+        return  true;
+    }else if(negative && !b.negative){
+        return false;
+    }
+    if(!negative){
+    if(digits.length() > b.digits.length()){
+        return true;
+        }else if(digits.length() < b.digits.length()){
+            return false;
+        }
+    }else if(negative){
+        if(digits.length() < b.digits.length()){
+            return true;
+        }else if(digits.length() > b.digits.length()){
+            return false;
+        }
+    }
+    if(!negative){
+        for(int i = 0; i < digits.length(); i++){
+            if(digits[i] > b.digits[i]){
+                return true;
+            }else if(digits[i] < b.digits[i]){
+                return false;
+            }
+        }
+    }
+    if(negative){
+        for(int i = 0; i < digits.length(); i++){
+            if(digits[i] < b.digits[i]){
+                return true;
+            }else if(digits[i] > b.digits[i]){
+                return false;
+            }
+        }
+    }
+    return false;
+}
