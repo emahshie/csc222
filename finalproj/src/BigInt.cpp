@@ -222,7 +222,37 @@ BigInt BigInt::operator+(const BigInt& b) const {
     return BigInt(result);
 }
 
-BigInt BigInt::operator - (const BigInt &b) const {
-    BigInt result;
-    return result;
+BigInt BigInt::operator-(const BigInt& b) const {
+   
+
+    std::string result = "";
+    int borrow = 0;
+
+    int i = digits.size() - 1;
+    int j = b.digits.size() - 1;
+
+    while (i >= 0 || j >= 0) {
+        int digit1 = (i >= 0) ? digits[i] - '0' : 0; 
+        int digit2 = (j >= 0) ? b.digits[j] - '0' : 0; 
+
+        digit1 -= borrow; 
+
+        if (digit1 < digit2) {
+            digit1 += 10; 
+            borrow = 1;   
+        } else {
+            borrow = 0;
+        }
+
+        result += (digit1 - digit2) + '0'; 
+        i--;
+        j--;
+    }
+    while (result.size() > 1 && result.back() == '0') {
+        result.pop_back();
+    }
+
+    std::reverse(result.begin(), result.end());
+
+    return BigInt(result);
 }
