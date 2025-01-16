@@ -223,7 +223,11 @@ BigInt BigInt::operator+(const BigInt& b) const {
 }
 
 BigInt BigInt::operator-(const BigInt& b) const {
-   
+   if(b>*this){
+    BigInt n = (b-*this);
+    n.negative = true;
+    return n;
+   }
 
     std::string result = "";
     int borrow = 0;
