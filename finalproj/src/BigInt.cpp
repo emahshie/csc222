@@ -197,7 +197,16 @@ bool BigInt::operator != (const BigInt &b) const {
 
 
 BigInt BigInt::operator+(const BigInt& b) const {
-    
+    if(negative ^ b.negative){
+        if(negative){
+            BigInt n(digits);
+            return(b-n);
+        } 
+        else {
+            BigInt n(b.digits);
+            return(*this-n);
+        }
+    }
     std::string result = "";
     int extra = 0;
 

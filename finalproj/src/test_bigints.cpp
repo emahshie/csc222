@@ -121,3 +121,9 @@ TEST_CASE("Test can add two negative BigInts"){
     BigInt i2("-400");
     CHECK((i1+i2).to_string() == "-420");
 }
+
+TEST_CASE("Test can add one negative one positive BigInts"){
+    BigInt i1("20");
+    BigInt i2("-400");
+    CHECK((i1+i2).to_string() == "-380");
+}
