@@ -219,6 +219,9 @@ BigInt BigInt::operator+(const BigInt& b) const {
 
     
     std::reverse(result.begin(), result.end());
+    if(negative && b.negative){
+        result.insert(0,"-");
+    }
     return BigInt(result);
 }
 

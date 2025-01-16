@@ -115,3 +115,9 @@ TEST_CASE("Test can subtract positive BigInts") {
     CHECK((i4 - i5).to_string() == "9998");
     CHECK((i5 - i4).to_string() == "-9998");
 }
+
+TEST_CASE("Test can add two negative BigInts"){
+    BigInt i1("-20");
+    BigInt i2("-400");
+    CHECK((i1+i2).to_string() == "-420");
+}
