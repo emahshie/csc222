@@ -235,8 +235,22 @@ BigInt BigInt::operator+(const BigInt& b) const {
 }
 
 BigInt BigInt::operator-(const BigInt& b) const {
-   if(b>*this){
+   if(b>*this && !negative && !b.negative){
     BigInt n = (b-*this);
+    n.negative = true;
+    return n;
+   }
+
+   if(!negative && b.negative){
+    BigInt n = b;
+    n.negative = false;
+    return(*this+n);
+   }
+
+   if(negative && !b.negative){
+    BigInt n = *this;
+    n.negative = false;
+    n = n + b;
     n.negative = true;
     return n;
    }
