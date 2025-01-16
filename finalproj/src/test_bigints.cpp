@@ -127,3 +127,62 @@ TEST_CASE("Test can add one negative one positive BigInts"){
     BigInt i2("-400");
     CHECK((i1+i2).to_string() == "-380");
 }
+
+TEST_CASE("Test can add BigInts") {
+    BigInt i1("123");
+    BigInt i2("321");
+    BigInt i3("43210");
+    BigInt i4("9999");
+    BigInt i5("99999");
+    BigInt i6("999999999");
+    BigInt i7("109");
+    BigInt i8("9");
+    CHECK((i1 + i2).to_string() == "444");
+    CHECK((i3 + i4).to_string() == "53209");
+    CHECK((i5 + i6).to_string() == "1000099998");
+    CHECK((i7 + i8).to_string() == "118");
+}
+
+TEST_CASE("Test can add negitive BigInts") {
+    BigInt i1("-123");
+    BigInt i2("321");
+    BigInt i3("43210");
+    BigInt i4("-9999");
+    BigInt i5("99999");
+    BigInt i6("-999999999");
+    BigInt i7("-109");
+    BigInt i8("21");
+    CHECK((i1 + i2).to_string() == "198");
+    CHECK((i3 + i4).to_string() == "33211");
+    CHECK((i5 + i6).to_string() == "-999900000");
+    CHECK((i8 + i7).to_string() == "-88");
+}
+
+TEST_CASE("Test can subtract BigInts") {
+    BigInt i1("123");
+    BigInt i2("321");
+    BigInt i3("43210");
+    BigInt i4("9999");
+    BigInt i5("99999");
+    BigInt i6("999999999");
+    BigInt i7("109");
+    BigInt i8("9");
+    CHECK((i2 - i1).to_string() == "198");
+    CHECK((i3 - i4).to_string() == "33211");
+    CHECK((i5 - i6).to_string() == "-999900000");
+    CHECK((i7 - i8).to_string() == "100");
+}
+TEST_CASE("Test can subtract negitive BigInts") {
+    BigInt i1("-123");
+    BigInt i2("321");
+    BigInt i3("-43210");
+    BigInt i4("9999");
+    BigInt i5("99999");
+    BigInt i6("-999999999");
+    BigInt i7("109");
+    BigInt i8("9");
+    CHECK((i2 - i1).to_string() == "444");
+    CHECK((i3 - i4).to_string() == "-53209");
+    CHECK((i5 - i6).to_string() == "1000099998");
+    CHECK((i7 - i8).to_string() == "100");
+}
