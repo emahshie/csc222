@@ -331,9 +331,7 @@ BigInt BigInt::operator-(const BigInt& b) const {
 }*/
 
 BigInt BigInt::operator*(const BigInt& b) const {
-    
-
-    
+     
     std::string result(digits.size() + b.digits.size(), '0');
 
     
@@ -347,8 +345,7 @@ BigInt BigInt::operator*(const BigInt& b) const {
         result[i] += carry; 
     }
 
-   
-    size_t start = result.find_first_not_of('0');
+    int start = result.find_first_not_of('0');
     if (start == std::string::npos) {
         result = "0"; 
     } else {
