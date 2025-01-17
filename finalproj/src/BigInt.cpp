@@ -287,48 +287,7 @@ BigInt BigInt::operator-(const BigInt& b) const {
     return BigInt(result);
 }
 
-/*BigInt BigInt::operator*(const BigInt& b) const{
-    std::string result;
-    std::string bottom;
-    std::string top;
-    int carry = 0;
-    int count = 0;
-    BigInt total;
-    BigInt add;
-    
 
-    if(digits>b.digits){
-        top = digits; 
-        bottom = b.digits;
-    } 
-    else {
-        top = b.digits; 
-        bottom = digits;
-    }
-    
-    //int i = top.size() - 1;
-    //int j = bottom.size() - 1;
-
-    for(int j = 0;j< bottom.size() - 1;j++){
-        string temp = "";
-        for(int i = 0;i<top.size() - 1;i++){
-            int t = static_cast<int>(top[top.size()-1-i]) * static_cast<int>(bottom[bottom.size()-1-j]) + carry;
-            temp.insert(0, std::to_string(t%10));
-            carry = t/10;
-        }
-        for(int k = 0;k<count;k++){
-            temp += "0";
-        }
-        add.digits = temp;
-        total = total + add;
-
-
-        count++;
-    }
-    
-    return total;
-    
-}*/
 
 BigInt BigInt::operator*(const BigInt& b) const {
      
