@@ -196,8 +196,10 @@ TEST_CASE("Test can multiply BigInts") {
     BigInt i6("-6789");
     BigInt i7("3");
     BigInt i8("3");
+    BigInt i9("0");
     CHECK((i2 * i1).to_string() == "8448");
     CHECK((i3 * i4).to_string() == "-90");
     CHECK((i5 * i6).to_string() == "838142784");
     CHECK((i7 * i8).to_string() == "9");
+    CHECK((i9 * i1).to_string() == "0");
 }

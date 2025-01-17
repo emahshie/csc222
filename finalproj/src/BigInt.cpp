@@ -287,7 +287,76 @@ BigInt BigInt::operator-(const BigInt& b) const {
     return BigInt(result);
 }
 
-BigInt BigInt::operator*(const BigInt& b) const{
-    BigInt result;
-    return result;
+/*BigInt BigInt::operator*(const BigInt& b) const{
+    std::string result;
+    std::string bottom;
+    std::string top;
+    int carry = 0;
+    int count = 0;
+    BigInt total;
+    BigInt add;
+    
+
+    if(digits>b.digits){
+        top = digits; 
+        bottom = b.digits;
+    } 
+    else {
+        top = b.digits; 
+        bottom = digits;
+    }
+    
+    //int i = top.size() - 1;
+    //int j = bottom.size() - 1;
+
+    for(int j = 0;j< bottom.size() - 1;j++){
+        string temp = "";
+        for(int i = 0;i<top.size() - 1;i++){
+            int t = static_cast<int>(top[top.size()-1-i]) * static_cast<int>(bottom[bottom.size()-1-j]) + carry;
+            temp.insert(0, std::to_string(t%10));
+            carry = t/10;
+        }
+        for(int k = 0;k<count;k++){
+            temp += "0";
+        }
+        add.digits = temp;
+        total = total + add;
+
+
+        count++;
+    }
+    
+    return total;
+    
+}*/
+
+BigInt BigInt::operator*(const BigInt& b) const {
+    
+
+    
+    std::string result(digits.size() + b.digits.size(), '0');
+
+    
+    for (int i = digits.size() - 1; i >= 0; --i) {
+        int carry = 0;
+        for (int j = b.digits.size() - 1; j >= 0; --j) {
+            int product = (digits[i] - '0') * (b.digits[j] - '0') + (result[i + j + 1] - '0') + carry;
+            result[i + j + 1] = (product % 10) + '0';
+            carry = product / 10;
+        }
+        result[i] += carry; 
+    }
+
+   
+    size_t start = result.find_first_not_of('0');
+    if (start == std::string::npos) {
+        result = "0"; 
+    } else {
+        result = result.substr(start);
+    }
+
+    
+    BigInt final_result(result);
+
+    return final_result;
 }
