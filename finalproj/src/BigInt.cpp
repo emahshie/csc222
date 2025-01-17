@@ -355,5 +355,7 @@ BigInt BigInt::operator*(const BigInt& b) const {
     
     BigInt final_result(result);
 
+    if(negative ^ b.negative) final_result.negative = true;
+
     return final_result;
 }
