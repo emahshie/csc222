@@ -318,3 +318,8 @@ BigInt BigInt::operator*(const BigInt& b) const {
 
     return final_result;
 }
+
+BigInt BigInt::operator/(const BigInt& b) const {
+    BigInt result;
+    return result;
+}
