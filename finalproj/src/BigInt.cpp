@@ -320,6 +320,7 @@ BigInt BigInt::operator*(const BigInt& b) const {
 }
 
 BigInt BigInt::operator/(const BigInt& b) const {
+    if(b.digits>digits)return BigInt("0");
     BigInt result;
     return result;
 }
