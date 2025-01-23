@@ -326,11 +326,28 @@ BigInt BigInt::operator/(const BigInt& b) const {
         return BigInt("1");
     }
     
+    std::string res;
+    BigInt div(digits[0]);
+    BigInt den(b.digits);
+    int count;
+
+    for(int i=0;i<digits.size();i++){
+        if(div < den){
+            res += '0';
+            BigInt den(stoi(den.digits) + stoi(b.digits.substr(0, i+1)));
+        }
+        else{
+            while(div.digits>den.digits){
+            res += stoi(div.digits)/stoi(den.digits);
+            BigInt den(stoi(div.digits) % stoi(den.digits));
+        }
+
+
+    }
+    }
     
     
-    
-    
-    BigInt result;
+    BigInt result(res);
     if(negative ^ b.negative)result.negative = true;
     return result;
 }
