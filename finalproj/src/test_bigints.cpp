@@ -213,8 +213,11 @@ TEST_CASE("Test can divide BigInts") {
     BigInt i6("-199");
     BigInt i7("3");
     BigInt i8("-3");
+    BigInt i9("-1");
     CHECK((i2 / i1).to_string() == "1");
     CHECK((i3 / i4).to_string() == "0");
     CHECK((i5 / i6).to_string() == "10");
     CHECK((i7 / i8).to_string() == "-1");
+    CHECK((i7 / i9).to_string() == "-3");
+    CHECK((i8 / i9).to_string() == "3");
 }
