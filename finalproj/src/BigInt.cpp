@@ -339,13 +339,13 @@ BigInt BigInt::operator/(const BigInt& b) const {
 
     for(int i=1;i<digits.size();i++){
         if(div < den){
-            res += '0';
+            res += '0';                             
         }
         else{
             
             res += stoi(div.digits)/stoi(den.digits);
         }
-        BigInt div(div.digits + digits[i]);
+        BigInt div(std::to_string((stoi(div.digits) % stoi(den.digits))) + digits[i]);
 
     }
     
