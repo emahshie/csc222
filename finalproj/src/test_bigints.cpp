@@ -204,7 +204,7 @@ TEST_CASE("Test can multiply BigInts") {
     CHECK((i9 * i1).to_string() == "0");
 }
 
-TEST_CASE("Test can divide BigInts") {
+/*TEST_CASE("Test can divide BigInts") {
     BigInt i1("9");
     BigInt i2("9");
     BigInt i3("9");
@@ -220,4 +220,4 @@ TEST_CASE("Test can divide BigInts") {
     CHECK((i7 / i8).to_string() == "-1");
     CHECK((i7 / i9).to_string() == "-3");
     CHECK((i8 / i9).to_string() == "3");
-}
+}*/

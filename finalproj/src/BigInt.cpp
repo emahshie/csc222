@@ -319,7 +319,7 @@ BigInt BigInt::operator*(const BigInt& b) const {
     return final_result;
 }
 
-BigInt BigInt::operator/(const BigInt& b) const {
+/*BigInt BigInt::operator/(const BigInt& b) const {
     if(b.digits>digits)return BigInt("0");
     if(b.digits==digits){
         if(negative ^ b.negative)return BigInt("-1");
@@ -353,4 +353,4 @@ BigInt BigInt::operator/(const BigInt& b) const {
     BigInt result(res);
     if(negative ^ b.negative)result.negative = true;
     return result;
-}
+}*/
